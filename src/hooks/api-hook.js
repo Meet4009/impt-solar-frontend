@@ -32,11 +32,11 @@ export const customApi = createApi({
     "ProjectPlanById",
     "RecentlProjects",
   ],
-  // extractRehydrationInfo(action, { reducerPath }) {
-  //   if (action.type === REHYDRATE) {
-  //     return action.payload[reducerPath];
-  //   }
-  // },
+  extractRehydrationInfo(action, { reducerPath }) {
+    if (action.type === REHYDRATE) {
+      return action.payload[reducerPath];
+    }
+  },
   endpoints: (build) => ({
     getAdminRuralProjects: build.query({
       query: ({ page, pageSize, sort, search }) => ({
